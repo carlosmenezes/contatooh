@@ -20,4 +20,6 @@ angular.module('contatooh').controller('ContatoController', function($scope, $ro
       .catch(erro => $scope.mensagem = { texto: 'Não foi possível salvar o contato.' });
   };
 
+  Contato.query(contatos => $scope.contatos = contatos);
+
 });
