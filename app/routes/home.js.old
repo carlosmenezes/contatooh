@@ -1,4 +1,8 @@
 module.exports = function(app) {
+
+ console.log("INITIALIZING OLD ROUTE");
+
+
   var controller = app.controllers.home;
 
   app.get('/index', controller.index);
