@@ -10,7 +10,7 @@ module.exports = function(app) {
     successRedirect: '/'
   }));
 
-  app.get('/*', function(req, res, next) {
+  app.get('/', function(req, res, next) {
     console.log("VERIFYING AUTHENTICATION...");
     if (req.isAuthenticated()) {
       console.log("AUTHENTICATED, PROCEEDING...");
@@ -19,6 +19,11 @@ module.exports = function(app) {
       console.log('NOT AUTHENTICATED, REDIRECTING TO AUTH PAGE...');
       res.render('auth');
     }
+  });
+
+  app.get('/logout', (req, res) => {
+    req.logOut();
+    res.redirect('/');
   });
 
 };
