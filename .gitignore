@@ -3,3 +3,4 @@ public/vendor
 dist
 .DS_Store
 .tmp
+script
